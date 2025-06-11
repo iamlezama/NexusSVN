@@ -1,0 +1,8 @@
+NexusSVN/
+    .gitignore
+    NexusSVN.spec
+    build/
+    dist/
+    venv/
+    __pycache__/
+    README.md
