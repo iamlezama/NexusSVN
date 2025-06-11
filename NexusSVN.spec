@@ -5,8 +5,7 @@ a = Analysis(
     pathex=[],
     binaries=[],
     datas=[
-        # Add this line to bundle your portable SVN folder (recursive copy)
-        ('bin/svn/Apache-Subversion-1.14.5-2/**/*', 'bin/svn/Apache-Subversion-1.14.5-2'),
+        ('bin/svn/Apache-Subversion-1.14.5-2/bin/*', 'bin/svn/Apache-Subversion-1.14.5-2/bin'),
         # Add any other data files you need here, e.g. config.json:
         # ('config.json', '.'),
     ],
