@@ -1,8 +1,39 @@
-NexusSVN/
-    .gitignore
-    NexusSVN.spec
-    build/
-    dist/
-    venv/
-    __pycache__/
-    README.md
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# PyInstaller
+*.spec
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Misc
+.DS_Store
+Thumbs.db
