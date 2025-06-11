@@ -82,7 +82,12 @@ class SVNOperations:
         for root, dirs, files in os.walk(base_dir):
             if '.svn' in dirs:
                 try:
-                    result = subprocess.run([SVN_EXECUTABLE, 'status'], cwd=root, capture_output=True, text=True)
+                    result = subprocess.run(
+                        [SVN_EXECUTABLE, 'status'], 
+                        cwd=root, 
+                        capture_output=True, 
+                        text=True,
+                        creationflags=subprocess.CREATE_NO_WINDOW)
                     if result.stdout.strip():
                         svn_dirs_with_changes.append(root)
                 except Exception as e:

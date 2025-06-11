@@ -8,6 +8,10 @@ class MainWindow(ttk.Frame):
                 self.grid(row=1, column=0, sticky="nsew")
                 self.grid_columnconfigure(0, weight=1)
                 self.grid_rowconfigure(0, weight=1)
+                
+                # Add a status label at the bottom of the window
+                self.status_label = ttk.Label(master, text="Ready", anchor="w")
+                self.status_label.grid(row=2, column=0, sticky="ew", padx=10, pady=5)
                 # Styles
                 style = ttk.Style()
                 style.theme_use("clam")

@@ -103,11 +103,15 @@ class NexusSVNApp:
             repo_path
         )
     def _handle_scan_for_uncommitted_changes(self):
-            base_dir = self.main_window.working_copies_dir_var.get().strip()
+            # Show a loading message
+            self.main_window.status_label.config(text="Searching for uncommitted changes...")
+            self.master.update_idletasks()  # Force UI refresh
+            base_dir = self.main_window.status_dir_var.get().strip()
             # It's better for core logic to return data, and UI to display it.
             # messagebox calls were moved to core, but ideally, core returns result/error, and app handles messagebox
             changes = self.svn_operations.scan_for_uncommitted_changes(base_dir)
             self.main_window.update_changes_listbox(changes)
+            self.main_window.status_label.config(text="Search complete!")
     def _handle_open_selected_change(self):
             selection = self.main_window.changes_listbox.curselection()
             if not selection:
